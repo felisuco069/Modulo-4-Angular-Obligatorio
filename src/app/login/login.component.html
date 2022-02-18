@@ -18,6 +18,8 @@
   </div>
 
   {{ password.errors | json }}
-
+  <div *ngIf="loginErrorMessage" class="warning">
+    Username o password incorrect. Remember that they are master8@lemoncode.net and 12345678.
+  </div>
   <button (click)="enterLogin()">Login</button>
 </form>
