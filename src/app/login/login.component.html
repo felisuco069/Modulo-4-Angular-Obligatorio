@@ -1,0 +1,23 @@
+<app-public-header></app-public-header>
+<p>Hello from login component</p>
+
+<form #loginForm="ngForm">
+  <div>
+    <label>Username </label>
+    <input #username="ngModel" name="username" [(ngModel)]="service.login.username" required />
+  </div>
+  <div *ngIf="username.invalid && username.touched" class="warning">
+    Este campo es obligatorio.
+  </div>
+  <div>
+    <label>Password </label>
+    <input #password="ngModel" name="password" [(ngModel)]="service.login.password" required minlength="8">
+  </div>
+  <div *ngIf="password.invalid && password.touched" class="warning">
+    Este campo es obligatorio y con un mínimo de 8 caracteres.
+  </div>
+
+  {{ password.errors | json }}
+
+  <button (click)="enterLogin()">Login</button>
+</form>
