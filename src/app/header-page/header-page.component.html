@@ -1,4 +1,10 @@
 <div class="headerPageContainer">
   <img src="../../assets/logos header/Escudo_de_Nerja.svg.jpeg" class="escudo" alt="">
+  {{userLogued | json}}
+  <div *ngIf="userLogued">
+
+    <a routerLink="/home" (click)="logout()">Logout</a>
+    <span>Hello Sr. Franco</span>
+  </div>
   <img src="../../assets/logos header/Nerja.jpeg" class="nerjaLetters" alt="">
 </div>
