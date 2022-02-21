@@ -1,0 +1,10 @@
+.publicMenuContainer {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  & a {
+    text-align: center;
+    width: 5rem;
+    margin: 1rem;
+  }
+}

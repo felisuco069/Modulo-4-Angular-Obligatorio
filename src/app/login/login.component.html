@@ -1,25 +1,25 @@
 <app-public-header></app-public-header>
-<p>Hello from login component</p>
+<h2>Login</h2>
+<div class="formContainer">
+  <form #loginForm="ngForm">
+    <div>
+      <label>Username: </label>
+      <input #username="ngModel" name="username" [(ngModel)]="service.dataUser.username" required />
+    </div>
+    <div *ngIf="username.invalid && username.touched" class="warning">
+      Este campo es obligatorio.
+    </div>
+    <div>
+      <label>Password: </label>
+      <input #password="ngModel" name="password" [(ngModel)]="service.dataUser.password" required minlength="8">
+    </div>
+    <div *ngIf="password.invalid && password.touched" class="warning">
+      Este campo es obligatorio y con un mínimo de 8 caracteres.
+    </div>
 
-<form #loginForm="ngForm">
-  <div>
-    <label>Username </label>
-    <input #username="ngModel" name="username" [(ngModel)]="service.login.username" required />
-  </div>
-  <div *ngIf="username.invalid && username.touched" class="warning">
-    Este campo es obligatorio.
-  </div>
-  <div>
-    <label>Password </label>
-    <input #password="ngModel" name="password" [(ngModel)]="service.login.password" required minlength="8">
-  </div>
-  <div *ngIf="password.invalid && password.touched" class="warning">
-    Este campo es obligatorio y con un mínimo de 8 caracteres.
-  </div>
-
-  {{ password.errors | json }}
-  <div *ngIf="loginErrorMessage" class="warning">
-    Username o password incorrect. Remember that they are master8@lemoncode.net and 12345678.
-  </div>
-  <button (click)="enterLogin()">Login</button>
-</form>
+    <div *ngIf="loginErrorMessage" class="warning">
+      Username o password incorrect. Remember that they are master8@lemoncode.net and 12345678.
+    </div>
+    <button (click)="enterLogin()">Login</button>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+h2 {
+  text-align: center;
+}
+.formContainer {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  & div {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    & label {
+      margin: 0.5rem 0;
+    }
+  }
+
+  & button {
+    width: 7rem;
+  }
+}

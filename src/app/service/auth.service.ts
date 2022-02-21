@@ -6,22 +6,30 @@ import { loginEntity } from '../model/models';
   providedIn: 'root',
 })
 export class AuthService {
-  public login: loginEntity = {
+  public dataUser: loginEntity = {
     username: '',
     password: '',
   };
+  public userLogued: boolean = false;
   constructor(private router: Router) {}
 
-  enterLogin(): Boolean {
-    console.log(this.login);
+  login(): Boolean {
     if (
-      this.login.username === 'master8@lemoncode.net' &&
-      this.login.password === '12345678'
+      this.dataUser.username === 'master8@lemoncode.net' &&
+      this.dataUser.password === '12345678'
     ) {
+      this.isLogued();
       return true;
-      // this.router.navigate(['/dashboard']);
     } else {
       return false;
     }
+  }
+  logout(): void {
+    this.dataUser.username = '';
+    this.dataUser.password = '';
+    this.router.navigate(['/home']);
+  }
+  isLogued() {
+    return (this.userLogued = true);
   }
 }

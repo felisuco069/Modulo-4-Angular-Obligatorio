@@ -14,6 +14,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { CrudComponent } from './crud/crud.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HeaderPageComponent } from './header-page/header-page.component';
+import { FooterPageComponent } from './footer-page/footer-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ProfileComponent } from './profile/profile.component';
     GalleryComponent,
     CrudComponent,
     ProfileComponent,
+    HeaderPageComponent,
+    FooterPageComponent,
   ],
   imports: [
     BrowserModule,

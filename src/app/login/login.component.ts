@@ -10,15 +10,16 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
   public loginErrorMessage: Boolean = false;
   constructor(public service: AuthService, private router: Router) {
-    service.login = {
+    service.dataUser = {
       username: '',
       password: '',
     };
   }
 
   enterLogin() {
-    if (this.service.enterLogin()) {
+    if (this.service.login()) {
       this.router.navigate(['/dashboard']);
+      this.service.isLogued();
     } else {
       this.loginErrorMessage = true;
     }
