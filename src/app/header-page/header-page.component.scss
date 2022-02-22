@@ -7,6 +7,13 @@
   width: 8%;
   height: 8%;
 }
+.loguedContainer {
+  display: flex;
+  align-items: center;
+  & > * {
+    margin: 0 1rem;
+  }
+}
 .nerjaLetters {
   width: 18%;
   height: 18%;

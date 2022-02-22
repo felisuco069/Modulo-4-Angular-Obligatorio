@@ -8,20 +8,22 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  public loginErrorMessage: Boolean = false;
+  public loginErrorMessage: boolean = false;
+  public stateLogin: boolean = false;
   constructor(public service: AuthService, private router: Router) {
     service.dataUser = {
       username: '',
       password: '',
     };
+    this.service.isLogued().subscribe((state) => (this.stateLogin = state));
   }
 
   enterLogin() {
-    if (this.service.login()) {
+    this.service.login();
+    if (this.stateLogin) {
       this.router.navigate(['/dashboard']);
-      this.service.isLogued();
     } else {
-      this.loginErrorMessage = true;
+      !this.loginErrorMessage;
     }
   }
 

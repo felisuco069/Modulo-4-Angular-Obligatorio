@@ -16,6 +16,7 @@ import { CrudComponent } from './crud/crud.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HeaderPageComponent } from './header-page/header-page.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
+import { ChooseHeaderComponent } from './choose-header/choose-header.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FooterPageComponent } from './footer-page/footer-page.component';
     ProfileComponent,
     HeaderPageComponent,
     FooterPageComponent,
+    ChooseHeaderComponent,
   ],
   imports: [
     BrowserModule,

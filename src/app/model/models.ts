@@ -1,4 +1,4 @@
-export interface loginEntity {
+export interface LoginEntity {
   username: string;
   password: string;
 }

@@ -1,8 +1,6 @@
 <div class="headerPageContainer">
   <img src="../../assets/logos header/Escudo_de_Nerja.svg.jpeg" class="escudo" alt="">
-  {{userLogued | json}}
-  <div *ngIf="userLogued">
-
+  <div class="loguedContainer" *ngIf="userLogued">
     <a routerLink="/home" (click)="logout()">Logout</a>
     <span>Hello Sr. Franco</span>
   </div>

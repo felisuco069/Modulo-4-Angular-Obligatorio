@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PublicHeaderComponent } from './public-header/public-header.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
@@ -10,7 +9,7 @@ import { CrudComponent } from './crud/crud.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-  { path: '', component: PublicHeaderComponent },
+  { path: '', component: HomeComponentComponent },
   { path: 'home', component: HomeComponentComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
