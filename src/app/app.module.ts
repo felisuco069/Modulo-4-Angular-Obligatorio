@@ -17,6 +17,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HeaderPageComponent } from './header-page/header-page.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
 import { ChooseHeaderComponent } from './choose-header/choose-header.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ChooseHeaderComponent } from './choose-header/choose-header.component';
     HeaderPageComponent,
     FooterPageComponent,
     ChooseHeaderComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,

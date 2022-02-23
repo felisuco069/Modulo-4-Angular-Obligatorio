@@ -1,0 +1,43 @@
+.photosContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.photoList {
+  display: flex;
+}
+
+.photo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 6rem;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonControl {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  & button {
+    width: 6rem;
+    margin: 1rem 0;
+    border-radius: 15px;
+    background-color: cadetblue;
+  }
+}
+
+.photoSelected {
+  display: flex;
+  align-items: center;
+  width: 26rem;
+  & img {
+    width: 100%;
+    height: fit-content;
+  }
+}

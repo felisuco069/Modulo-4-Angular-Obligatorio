@@ -1,6 +1,8 @@
 <div class="container">
-  <app-header-page></app-header-page>
+  <app-header-page class="headerPage"></app-header-page>
   <app-choose-header></app-choose-header>
-  <router-outlet></router-outlet>
-  <app-footer-page></app-footer-page>
+  <div class="page">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer-page class="footerPage"></app-footer-page>
 </div>

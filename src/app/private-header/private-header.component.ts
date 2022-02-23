@@ -11,7 +11,7 @@ export class PrivateHeaderComponent implements OnInit {
   public userLogued: boolean = false;
   constructor(public service: AuthService) {
     this.username = this.service.dataUser.username;
-    this.service.isLogued().subscribe((state) => (this.userLogued = state));
+    this.service.isLogued$().subscribe((state) => (this.userLogued = state));
   }
 
   ngOnInit(): void {}

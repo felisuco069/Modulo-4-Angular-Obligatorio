@@ -1,2 +1,22 @@
-<!-- <app-private-header></app-private-header> -->
-<p>gallery works!</p>
+<h2>El mejor pueblo de Málaga</h2>
+<div class="photosContainer">
+  <div class="photoList">
+    <div class="photo" *ngFor="let photo of photosArray">
+      <span>{{photo.title}}</span>
+      <img id="{{photo.id}}" (click)="getPhotoSelected($event)" appHighlight src="../../assets/{{photo.src}}" alt="">
+    </div>
+  </div>
+  <div class="control">
+    <div class="buttonControl">
+      <button [disabled]="this.photoIndex === 0" (click)="getPreviusImg()"> Previous</button>
+      <button [disabled]="this.photoIndex === this.photosArray.length-1" (click)="getNextImg()">Next</button>
+      <button>Increase</button>
+      <button> Decrease</button>
+      <button>Play</button>
+      <button>Stop</button>
+    </div>
+    <div class="photoSelected">
+      <img src="../../assets/{{photoSelected.src}}" alt="">
+    </div>
+  </div>
+</div>

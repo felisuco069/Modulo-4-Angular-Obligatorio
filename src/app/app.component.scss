@@ -1,4 +1,17 @@
 .container {
-  display: flex;
+  display: grid;
   flex-direction: column;
+  min-height: 100vh;
+  grid-template-rows: 12% 6% auto 5%;
+}
+
+.headerPage {
+  display: flex;
+  align-items: center;
+}
+
+.footerPage {
+  position: relative;
+  bottom: 0;
+  width: 75vw;
 }

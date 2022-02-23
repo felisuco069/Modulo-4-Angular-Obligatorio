@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
       username: '',
       password: '',
     };
-    this.service.isLogued().subscribe((state) => (this.stateLogin = state));
+    this.service.isLogued$().subscribe((state) => (this.stateLogin = state));
   }
 
   enterLogin() {

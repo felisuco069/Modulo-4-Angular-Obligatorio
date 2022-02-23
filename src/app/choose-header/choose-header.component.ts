@@ -9,7 +9,7 @@ import { AuthService } from '../service/auth.service';
 export class ChooseHeaderComponent implements OnInit {
   public userLogued: boolean = false;
   constructor(public service: AuthService) {
-    this.service.isLogued().subscribe((state) => (this.userLogued = state));
+    this.service.isLogued$().subscribe((state) => (this.userLogued = state));
   }
 
   ngOnInit(): void {}
