@@ -3,19 +3,20 @@
   <div class="photoList">
     <div class="photo" *ngFor="let photo of photosArray">
       <span>{{photo.title}}</span>
-      <img id="{{photo.id}}" (click)="getPhotoSelected($event)" appHighlight src="../../assets/{{photo.src}}" alt="">
+      <img id="{{photo.id}}" (click)="getPhotoSelected($event)" appHighlight src="../../assets/{{photo.src}}"
+        alt="{{photo.title}}">
     </div>
   </div>
   <div class="control">
     <div class="buttonControl">
       <button [disabled]="this.photoIndex === 0" (click)="getPreviusImg()"> Previous</button>
       <button [disabled]="this.photoIndex === this.photosArray.length-1" (click)="getNextImg()">Next</button>
-      <button>Increase</button>
-      <button> Decrease</button>
-      <button>Play</button>
-      <button>Stop</button>
+      <button (click)="increaseImage()">Increase</button>
+      <button (click)="decreaseImage()"> Decrease</button>
+      <button *ngIf="this.isPlayed" (click)="playPhotos()">Play</button>
+      <button *ngIf="!this.isPlayed" (click)="stopPlayPhotos()">Stop</button>
     </div>
-    <div class="photoSelected">
+    <div [ngStyle]="{'width': width + 'rem'}" class="photoSelected">
       <img src="../../assets/{{photoSelected.src}}" alt="">
     </div>
   </div>

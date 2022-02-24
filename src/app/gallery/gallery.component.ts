@@ -11,6 +11,10 @@ export class GalleryComponent implements OnInit {
   public photosArray: Photograph[] = [];
   public photoSelected: Photograph = { id: 0, src: '', title: '' };
   public photoIndex: number = 0;
+  public play: any = null;
+  public isPlayed: boolean = true;
+  public width = 26;
+
   constructor(private service: AuthService) {
     this.photosArray = this.service.getPhotosArray();
     this.photoSelected = this.photosArray[this.photoIndex];
@@ -43,5 +47,28 @@ export class GalleryComponent implements OnInit {
       this.photoSelected = this.photosArray[this.photoIndex + 1];
       this.photoIndex++;
     }
+  }
+  playPhotos() {
+    this.play = setInterval(() => {
+      if (this.photoIndex < this.photosArray.length - 1) {
+        this.photoSelected = this.photosArray[this.photoIndex];
+        this.photoIndex++;
+        console.log('');
+      } else {
+        this.photoIndex = 0;
+        this.photoSelected = this.photosArray[this.photoIndex];
+      }
+    }, 2000);
+    this.isPlayed = !this.isPlayed;
+  }
+  stopPlayPhotos() {
+    clearInterval(this.play);
+    this.isPlayed = !this.isPlayed;
+  }
+  increaseImage() {
+    return this.width++;
+  }
+  decreaseImage() {
+    return this.width--;
   }
 }
