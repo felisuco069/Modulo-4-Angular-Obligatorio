@@ -1,6 +1,6 @@
 <div class="headerPageContainer">
   <img src="../../assets/logos header/Escudo_de_Nerja.svg.jpeg" class="escudo" alt="">
-  <div class="loguedContainer" *ngIf="isloguedador() ==='true'">
+  <div class="loguedContainer" *ngIf="islogued()">
     <a routerLink="/home" (click)="logout()">Logout</a>
     <span>Hello Sr. Franco</span>
   </div>

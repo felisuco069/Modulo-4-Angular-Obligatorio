@@ -10,12 +10,11 @@ export class ChooseHeaderComponent implements OnInit {
   public userLogued: boolean = false;
   constructor(public service: AuthService) {
     // this.service.isLogued$().subscribe((state) => (this.userLogued = state));
-    // !!localStorage.getItem('isLogued') ? !this.userLogued : this.userLogued;
   }
 
   ngOnInit(): void {}
 
   isLogued() {
-    return !!localStorage.getItem('isLogued');
+    return this.service.islogueado();
   }
 }

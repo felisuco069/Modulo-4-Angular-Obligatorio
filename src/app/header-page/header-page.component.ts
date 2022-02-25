@@ -18,7 +18,7 @@ export class HeaderPageComponent implements OnInit {
   logout() {
     this.service.logout();
   }
-  isloguedador() {
+  islogued() {
     return this.service.islogueado();
   }
 }
