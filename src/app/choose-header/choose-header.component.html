@@ -1,2 +1,4 @@
-<app-public-header *ngIf="!userLogued"></app-public-header>
-<app-private-header *ngIf="userLogued"></app-private-header>
+<!-- <app-public-header *ngIf="!userLogued"></app-public-header> -->
+<!-- <app-private-header *ngIf="userLogued"></app-private-header> -->
+<app-public-header *ngIf="!isLogued()"></app-public-header>
+<app-private-header *ngIf="isLogued()"></app-private-header>

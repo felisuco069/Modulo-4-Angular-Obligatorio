@@ -13,7 +13,8 @@ export class GalleryComponent implements OnInit {
   public photoIndex: number = 0;
   public play: any = null;
   public isPlayed: boolean = true;
-  public width = 26;
+  public width: number = 26;
+  public page: number = 1;
 
   constructor(private service: AuthService) {
     this.photosArray = this.service.getPhotosArray();
@@ -70,5 +71,13 @@ export class GalleryComponent implements OnInit {
   }
   decreaseImage() {
     return this.width--;
+  }
+  previusPage() {
+    if (this.page > 1) this.page--;
+  }
+  nextPage() {
+    if (this.page < Math.ceil(this.photosArray.length / 3)) {
+      this.page++;
+    }
   }
 }

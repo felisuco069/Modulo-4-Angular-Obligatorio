@@ -15,11 +15,12 @@ export class LoginComponent implements OnInit {
       username: '',
       password: '',
     };
-    this.service.isLogued$().subscribe((state) => (this.stateLogin = state));
+    // this.service.isLogued$().subscribe((state) => (this.stateLogin = state));
   }
 
   enterLogin() {
     this.service.login();
+    this.stateLogin = !!localStorage.getItem('isLogued');
     if (this.stateLogin) {
       this.router.navigate(['/dashboard']);
     } else {
