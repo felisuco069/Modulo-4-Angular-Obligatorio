@@ -18,6 +18,7 @@ import { HeaderPageComponent } from './header-page/header-page.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
 import { ChooseHeaderComponent } from './choose-header/choose-header.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { RotateDirective } from './directives/rotate.directive';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     FooterPageComponent,
     ChooseHeaderComponent,
     HighlightDirective,
+    RotateDirective,
   ],
   imports: [
     BrowserModule,

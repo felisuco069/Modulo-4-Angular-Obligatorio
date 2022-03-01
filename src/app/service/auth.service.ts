@@ -54,9 +54,9 @@ export class AuthService {
     },
   ];
   private state: boolean = false;
-  private userLogued$: BehaviorSubject<boolean> = new BehaviorSubject(
-    this.state
-  );
+  // private userLogued$: BehaviorSubject<boolean> = new BehaviorSubject(
+  //   this.state
+  // );
   constructor(private router: Router) {}
 
   // login(): boolean {
@@ -64,14 +64,14 @@ export class AuthService {
     this.state =
       this.dataUser.username === 'master8@lemoncode.net' &&
       this.dataUser.password === '12345678';
-    this.userLogued$.next(!this.state);
+    // this.userLogued$.next(!this.state);
     localStorage.setItem('isLogued', this.state.toString());
     return this.state;
   }
   logout(): void {
     this.dataUser.username = '';
     this.dataUser.password = '';
-    this.userLogued$.next(this.state);
+    // this.userLogued$.next(this.state);
     localStorage.removeItem('isLogued');
     // localStorage.removeItem('userLogued');
     this.router.navigate(['/home']);
@@ -80,9 +80,9 @@ export class AuthService {
   islogueado() {
     return localStorage.getItem('isLogued') === 'true';
   }
-  isLogued$(): Observable<boolean> {
-    return this.userLogued$.asObservable();
-  }
+  // isLogued$(): Observable<boolean> {
+  //   return this.userLogued$.asObservable();
+  // }
   getPhotosArray(): Photograph[] {
     return this.photograph;
   }

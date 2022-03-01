@@ -1,12 +1,14 @@
 <h2>El mejor pueblo de Málaga</h2>
 <div class="photosContainer">
-  <div class="photoList">
+  <div class="choosePhotoCarousel">
     <button (click)="previusPage()"> &lt;&lt; Previus page</button>
-    <div class="photo" [ngClass]="{'active':photo.id === this.photoSelected.id}"
-      *ngFor="let photo of photosArray|slice:(page-1)*3:((page-1)*3)+3">
-      <span>{{photo.title}}</span>
-      <img id="{{photo.id}}" (click)="getPhotoSelected($event)" appHighlight src="../../assets/{{photo.src}}"
-        alt="{{photo.title}}">
+    <div class="photoCrousel">
+      <div class="photo" [ngClass]="{'active':photo.id === this.photoSelected.id}"
+        *ngFor="let photo of photosArray|slice:(page-1)*3:((page-1)*3)+3">
+        <span>{{photo.title}}</span>
+        <img id="{{photo.id}}" (click)="getPhotoSelected($event)" appHighlight src="../../assets/{{photo.src}}"
+          alt="{{photo.title}}">
+      </div>
     </div>
     <button (click)="nextPage()">Next page >></button>
   </div>
@@ -20,7 +22,7 @@
       <button *ngIf="!this.isPlayed" (click)="stopPlayPhotos()">Stop</button>
     </div>
     <div [ngStyle]="{'width': width + 'rem'}" class="photoSelected">
-      <img src="../../assets/{{photoSelected.src}}" alt="">
+      <img appRotate src="../../assets/{{photoSelected.src}}" alt="">
     </div>
   </div>
 </div>

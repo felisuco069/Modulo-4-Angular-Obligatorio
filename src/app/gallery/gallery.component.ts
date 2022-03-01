@@ -39,6 +39,7 @@ export class GalleryComponent implements OnInit {
     } else {
       this.photoSelected = this.photosArray[this.photoIndex - 1];
       this.photoIndex--;
+      this.page = Math.floor(this.photoIndex / 3 + 1);
     }
   }
   getNextImg() {
@@ -47,16 +48,18 @@ export class GalleryComponent implements OnInit {
     } else {
       this.photoSelected = this.photosArray[this.photoIndex + 1];
       this.photoIndex++;
+      this.page = Math.floor(this.photoIndex / 3 + 1);
     }
   }
   playPhotos() {
     this.play = setInterval(() => {
-      if (this.photoIndex < this.photosArray.length - 1) {
+      if (this.photoIndex < this.photosArray.length) {
+        this.page = Math.floor(this.photoIndex / 3 + 1);
         this.photoSelected = this.photosArray[this.photoIndex];
         this.photoIndex++;
-        console.log('');
       } else {
         this.photoIndex = 0;
+        this.page = Math.floor(this.photoIndex / 3 + 1);
         this.photoSelected = this.photosArray[this.photoIndex];
       }
     }, 2000);
